@@ -1,0 +1,14 @@
+version: "2.3"
+services:
+  manage-device-management:
+    image: docker-limit-memory
+    container_name: docker-limit-memory
+    ports:
+      - 8081:8081
+    restart: always
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10k"
+        max-file: "10"
+    mem_limit: 400m
